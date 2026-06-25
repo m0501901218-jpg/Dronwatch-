@@ -343,7 +343,8 @@ async function runAnalysis(){
 ${wCtx}${sCtx}`;
   try{
     const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',headers:{'Content-Type':'application/json'},
+      method:'POST',headers:{, 'x-api-key': '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', 'anthropic-version': '2023-06-01'
+ },
       body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,
         messages:[{role:'user',content:[
           {type:'image',source:{type:'base64',media_type:'image/jpeg',data:img}},
